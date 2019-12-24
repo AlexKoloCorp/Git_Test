@@ -1,0 +1,67 @@
+Tomcat server
+192.168.100.168:8081
+
+initializing a new repositoriy and pushing him to remote server
+command-------
+	git init
+	git add .
+	git commit -m "some commit"
+	git remote add origin url...
+	git push -u origin master (master branch)
+	git reset [HEAD(or a hash-name of commit)???] fileName (reset command(git add fileName))
+	git checkout hash-name-of-commit  (go to this commit)
+	git log (check a commit history)
+	git revert HEAD (or a commit hash-name) --no-edit (without edit)
+	
+	~~[Work with branches]~~
+	|git branch (show branch info) 			    			    |
+	|git branch -v (show branch info wiht a last commit)			    | 
+	|git branch branchName (create branch) 	            			    |
+	|git checkout branchName (go to this branch)        			    |
+	|git checkout -b branchName(create branch and go to this branch) 	    |
+	|git branch -m newName (change a branch name) 			    	    |
+	|git branch -d branchName (delete branch) 			    	    |
+***
+Reset changes
+command-------
+	git checkout --fileName [or] .  (Удаляет изменения в файле если он не проиндексирован)
+	git reset fileName [or] . (Отменяет индексацию файла/ов)
+	git reset --hard HEAD^1 (Возвращает на один коммит назад)
+	git reset --soft HEAD^1 (Возвращает на один коммит назад, файл остается проиндексированым(модифицированым))
+***
+Get folder from github
+command-------
+	git clon url...
+***
+Uploading the latest changes into a remote server
+command-------
+	git add .(all files)
+	git commit -m "some commit" (adding changes to the local repository)
+	git push (uploading the last commit into a remote server)
+***
+Downloading latest chenges from server
+command-------
+	git pull 
+***
+Add a new contributor
+On GitHub-------
+	settings->collaborators->input accaunt->add collaborator->copy and sending url to another user.
+
+
+git config --global user.name "username"
+git config --global user.email someemail@example.com
+
+
+***
+Get info 
+command-------
+	git config --list
+
+~~[Git alias]~~
+command-------
+s = status --short
+st = status
+l = log --oneline --graph --decorate --all
+g = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'
+br = branch
+co = checkout
